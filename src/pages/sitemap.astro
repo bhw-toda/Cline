@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import pages from '@/setting/pages';
+
+export const pageData = {
+  title: 'サイトマップ',
+  description: 'サイト内のページ一覧です。',
+  htmlClass: 'page-sitemap',
+  pagePath: '/sitemap/',
+};
+---
+
+<Layout pageData={pageData}>
+  <div class="l-main__body">
+    <div class="l-main__contents">
+      <div class="l-container _narrow">
+        <h1 class="c-heading _lv1">サイトマップ</h1>
+        <ul class="c-list">
+          {
+            pages.map((page) => (
+              <li>
+                <a href={page.pageData.pagePath}>{page.pageData.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

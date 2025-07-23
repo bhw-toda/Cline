@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+export const pageData = {
+  title: 'テストページ',
+  description: 'テスト用のページです。',
+  htmlClass: 'page-test',
+  pagePath: '/test/',
+};
+---
+
+<Layout pageData={pageData}>
+  <div class="l-main__body">
+    <div class="l-main__contents">
+      <div class="l-container _narrow">
+        <h1 class="c-heading _lv1">テストページ</h1>
+        <p>このページはテスト用です。</p>
+      </div>
+    </div>
+  </div>
+</Layout>
