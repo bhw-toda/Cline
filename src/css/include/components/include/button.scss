@@ -1,0 +1,49 @@
+@use '../../variables/variables' as *;
+@use '../../mixins/mixins' as *;
+
+.c-button {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &._primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary);
+      opacity: 0.8;
+    }
+  }
+
+  &._secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+
+    &:hover {
+      background-color: var(--color-secondary);
+      opacity: 0.8;
+    }
+  }
+
+  &._outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../../variables/variables' as *;
+
+// Text alignment
+.u-text-left { text-align: left !important; }
+.u-text-center { text-align: center !important; }
+.u-text-right { text-align: right !important; }
+
+// Text colors
+.u-text-primary { color: var(--color-primary) !important; }
+.u-text-secondary { color: var(--color-secondary) !important; }
+.u-text-success { color: var(--color-success) !important; }
+.u-text-danger { color: var(--color-danger) !important; }
+.u-text-warning { color: var(--color-warning) !important; }
+.u-text-info { color: var(--color-info) !important; }
+.u-text-light { color: var(--color-light) !important; }
+.u-text-dark { color: var(--color-dark) !important; }
+.u-text-white { color: var(--color-white) !important; }
+.u-text-black { color: var(--color-black) !important; }
+
+// Font weights
+.u-fw-normal { font-weight: var(--font-weight-normal) !important; }
+.u-fw-bold { font-weight: var(--font-weight-bold) !important; }
+
+// Font sizes
+.u-fs-sm { font-size: var(--font-size-sm) !important; }
+.u-fs-base { font-size: var(--font-size-base) !important; }
+.u-fs-lg { font-size: var(--font-size-lg) !important; }
+.u-fs-xl { font-size: var(--font-size-xl) !important; }
