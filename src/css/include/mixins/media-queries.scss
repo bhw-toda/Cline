@@ -1,0 +1,32 @@
+@use '../variables/include/breakpoints' as *;
+
+// Media query mixins
+@mixin sm-screen {
+  @media (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media (min-width: map-get($breakpoints, xl)) {
+    @content;
+  }
+}
+
+@mixin xxl-screen {
+  @media (min-width: map-get($breakpoints, xxl)) {
+    @content;
+  }
+}
