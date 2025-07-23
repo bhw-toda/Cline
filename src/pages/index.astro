@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import pages from "@/setting/pages"
+
+export const pageData = {
+  title: "トップページ",
+  description: "",
+  htmlClass: "page-top",
+  pagePath: "/"
+}
+---
+
+<Layout pageData={pageData}>
+  {/* Headの前に挿入する要素を記述 */}
+  {/* <meta slot="appendHeadBefore" /> */}
+
+  {/* Headの後に挿入する要素を記述 */}
+  {/* <meta slot="appendHeadAfter" /> */}
+
+  {/* メインコンテンツの前に挿入する要素を記述 */}
+  {/* <div slot="contentBefore" /> */}
+
+  <div class="l-main__body">
+    <div class="l-main__contents">
+      <div class="l-container _narrow">
+        <ul class="c-list">
+          {
+            pages.map((page) => (
+              <li>
+                <a href={page.pageData.pagePath}>{page.pageData.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* フッターの後に挿入する要素を記述 */}
+  {/* <div slot="appendFooter" /> */}
+</Layout>
