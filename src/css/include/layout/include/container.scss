@@ -1,0 +1,21 @@
+@use '../../mixins/media-queries' as *;
+@use '../../variables/variables' as *;
+
+.l-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+
+  @include md-screen {
+    padding: 0 var(--spacing-lg);
+  }
+
+  &._narrow {
+    max-width: 800px;
+  }
+
+  &._wide {
+    max-width: 1400px;
+  }
+}

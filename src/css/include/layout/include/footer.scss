@@ -1,0 +1,17 @@
+@use '../../variables/variables' as *;
+
+.l-footer {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+  padding: var(--spacing-xl) 0;
+  margin-top: auto;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__copyright {
+    margin: 0;
+    font-size: var(--font-size-sm);
+  }
+}
