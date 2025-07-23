@@ -1,0 +1,57 @@
+---
+import site from '@/setting/site';
+import Meta from './site-parts/Meta.astro';
+import Font from './site-parts/import/Font.astro';
+import Style from './site-parts/import/Style.astro';
+import Script from './site-parts/import/Script.astro';
+import FooterScript from './site-parts/import/FooterScript.astro';
+import Header from './site-parts/Header/index.astro';
+import Footer from './site-parts/Footer.astro';
+
+import Core from '@lib/core';
+
+import '@/css/common.scss';
+
+type Props = { pageData: PageData };
+
+const { pageData } = Astro.props;
+---
+
+<!doctype html>
+<html
+  class={`no-js${pageData.htmlClass ? ' ' + pageData.htmlClass : ''}`}
+  lang={site.lang}
+>
+  <head>
+    <slot name='appendHeadBefore' />
+    <Meta pageData={pageData} />
+    <Font />
+    <Style />
+    <Script />
+    <Core client:only='react' />
+    <slot name='appendHeadAfter' />
+  </head>
+  <body
+    class={`${pageData.bodyClass || ''}`}
+    id='pagetop'
+  >
+    <a
+      href='#mainContent'
+      class='c-blockskip'
+      >このページの本文へ</a
+    >
+    <div class='l-main__outer'>
+      <Header />
+      <main
+        class='l-main'
+        id='mainContent'
+      >
+        <slot name='contentBefore' />
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <FooterScript />
+    <slot name='appendFooter' />
+  </body>
+</html>
