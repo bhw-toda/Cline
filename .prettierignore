@@ -1,0 +1,4 @@
+node_modules/
+htdocs/
+.astro/
+package-lock.json
