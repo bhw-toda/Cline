@@ -1,0 +1,34 @@
+---
+import site from '@/setting/site';
+
+type Props = { pageData: PageData };
+
+const { pageData } = Astro.props;
+
+const title = pageData.title ? `${pageData.title} | ${site.title}` : site.title;
+const description = pageData.description || site.description;
+const url = `${site.url}${pageData.pagePath}`;
+const ogType = pageData.pagePath === '/' ? site.ogType_top : site.ogType;
+---
+
+<meta charset={site.charset} />
+<meta name="viewport" content={site.viewport} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+<link rel="icon" type="image/svg+xml" href={site.faviconPath} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:type" content={ogType} />
+<meta property="og:image" content={`${site.url}${site.ogImage}`} />
+<meta property="og:locale" content={site.locale} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content={site.twitterCard} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${site.url}${site.ogImage}`} />
+{site.twitterSite && <meta name="twitter:site" content={site.twitterSite} />}
